@@ -1,0 +1,1 @@
+# vite_file_ending_renaming_test
