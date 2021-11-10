@@ -1,6 +1,6 @@
 import logo from './logo.svg'
 import './App.css'
-import {writeToConsole} from "./AppSubView";
+import {writeToConsole} from "./AppUtils";
 
 function App() {
     return (
