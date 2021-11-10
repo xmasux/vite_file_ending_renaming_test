@@ -1,16 +1,24 @@
 import logo from './logo.svg'
 import './App.css'
 import {writeToConsole} from "./AppUtils";
+import React, {Suspense, useState} from "react";
+
+const LazyLoadedComponent = React.lazy(() => import('./LazyLoadedComponent'))
 
 function App() {
+    const [count, setCount] = useState(0)
+
     return (
         <div className="App">
+            <Suspense fallback={<div>Loading...</div>}>
+                <LazyLoadedComponent />
+            </Suspense>
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo"/>
                 <p>Hello Vite + React!</p>
                 <p>
-                    <button type="button" onClick={() => writeToConsole()}>
-                        Click Me
+                    <button type="button" onClick={() => setCount((count) => count + 1)}>
+                        count is: {count}
                     </button>
                 </p>
                 <p>
