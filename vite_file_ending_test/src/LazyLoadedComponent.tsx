@@ -1,6 +1,6 @@
 import React from "react";
 import {Button, Message, Segment} from "semantic-ui-react";
-import {writeToConsole} from "./AppUtils";
+import {MessageWithText, writeToConsole} from "./AppUtils";
 
 export default function LazyLoadedComponent(): JSX.Element {
     return (
@@ -8,6 +8,7 @@ export default function LazyLoadedComponent(): JSX.Element {
             <Segment>
                 <Message>Some Text</Message>
                 <Button onClick={() => writeToConsole()}>Click Me</Button>
+                <MessageWithText />
             </Segment>
         </React.Fragment>
     )
